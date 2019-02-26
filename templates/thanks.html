@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title><?=$this->get('meta_title')?></title>
+        <meta name="description" content="<?=$this->get('meta_description')?>">
+        <meta name="keywords" content="<?=$this->get('meta_keywords')?>">        
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="icon" type="image/gif" href="images/favicon.gif">
+            
+        <link rel="stylesheet" type="text/css" href="<?=HOME?>/templates/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="<?=HOME?>/templates/css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="<?=HOME?>/templates/css/thanks.css">
+        
+        <!--[if lt IE 9]>
+            <script src="<?=HOME?>/templates/html5shiv.min.js"></script>
+            <script src="<?=HOME?>/templates/respond.min.js"></script>
+        <![endif]-->        
+    </head>
+    <body>
+        <section class="block-main">
+            <div class="block-main__wrapper">
+                <h2 class="block-main__header block-main__header_h2">Спасибо за заявку!</h2>
+                <div class="block-main__header block-main__header_h3">Я свяжусь с Вами в ближайшее время.</div>
+                <a href="<?=HOME?>/" class="block-main__btn">На главную</a>
+            </div>
+        </section>
+    </body>
+</html>

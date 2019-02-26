@@ -1,0 +1,37 @@
+        <div class="callback">
+            <div class="callback__form">
+                <form class="form" method="POST" action="<?=HOME?>/callback.html" enctype="multipart/form-data">
+                    <a href="#" class="form__close"></a>
+                    <div class="form__control">
+                        <label class="form__control-abs form__control-label form__control-label_req">Ваше имя</label>
+                        <input type="text" name="name" value="" class="form__control-abs form__control-input js-req" autocomplete="off" />
+                    </div>
+                    <div class="form__control">
+                        <label class="form__control-abs form__control-label form__control-label_req">Ваш EMail</label>
+                        <input type="text" name="email" value="" class="form__control-abs form__control-input js-req" autocomplete="off" />
+                    </div>
+                    <div class="form__control">
+                        <label class="form__control-abs form__control-label">Файл ТЗ и/или верстки</label>
+                        <input type="text" class="form__control-abs form__control-input" />
+                        <input type="file" name="file" class="form__control-abs form__control-file" />
+                        <div class="form__control-btn"></div>
+                    </div>                    
+                    <div class="form__control form__control_large">
+                        <label class="form__control-abs form__control-label">Ваш комментарий</label>
+                        <textarea name="comment" class="form__control-abs form__control-input form__control-input_textarea"></textarea>
+                    </div>
+                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                    <div class="form__info">
+                        Отправляя заявку Вы принимаете условия <a href="info/politika-konfidenczialnosti.html" target="_blank" class="form__info-link">политики конфиденциальности</a> и даете согласие на обработку персональных данных.
+                    </div>
+                    <input type="submit" value="Отправить" class="form__submit" />
+                </form>
+            </div>
+        </div>        
+        <div class="overlay"></div>
+        <script src="<?=HOME?>/templates/js/jquery.min.js"></script>
+        <script src="<?=HOME?>/templates/js/jquery.maskedinput.js"></script>
+        <script src="<?=HOME?>/templates/js/jquery.bxslider.min.js"></script>
+        <script src="<?=HOME?>/templates/js/page.js"></script>
+    </body>
+</html>

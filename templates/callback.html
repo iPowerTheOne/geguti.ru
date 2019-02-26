@@ -1,0 +1,8 @@
+<div>
+    <div>Имя: <?=$this->get('name')?></div>
+    <div>EMail: <?=$this->get('email')?></div>
+    <?php if ($this->get('comment')): ?>
+    <div>Комментарий:</div>
+    <div><?=$this->get('comment')?></div>
+    <?php endif; ?>
+</div>

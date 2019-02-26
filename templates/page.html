@@ -1,0 +1,26 @@
+<?php include_once(ABSPATH.'/templates/header.html'); ?>
+<header class="header header_page">
+    <nav class="header__nav container">
+        <?php foreach($this->get('menu') as $v): ?>
+        <a href="<?=$v['item_href']?>" class="header__nav-link js-link">
+            <span class="header__nav-text"><?=$v['item_name']?></span>
+        </a>        
+        <?php endforeach; ?>
+    </nav>
+    <a href="#" class="header__mobile"></a>
+</header>
+<div class="mobile">
+    <?php foreach($this->get('menu') as $v): ?>
+    <a href="<?=$v['item_href']?>" class="mobile__link js-link"><?=$v['item_name']?></a>
+    <?php endforeach; ?>
+    <a href="#" class="mobile__link mobile__link_close">Закрыть</a>            
+</div>
+<article class="page">
+    <div class="container">
+        <h1 class="page__name"><?=$this->get('page_name')?></h1>
+        <div class="page__text">
+            <?=$this->get('page_text')?>
+        </div>
+    </div>
+</article>
+<?php include_once(ABSPATH.'/templates/footer.html'); ?>

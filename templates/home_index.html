@@ -1,0 +1,150 @@
+<?php include_once(ABSPATH.'/templates/header.html'); ?>
+<header class="header">
+    <nav class="header__nav container">
+        <?php foreach($this->get('menu') as $v): ?>
+        <a href="<?=$v['item_href']?>" class="header__nav-link js-link">
+            <span class="header__nav-text"><?=$v['item_name']?></span>
+        </a>        
+        <?php endforeach; ?>
+    </nav>
+    <a href="#" class="header__mobile"></a>
+</header>
+<div class="mobile">
+    <?php foreach($this->get('menu') as $v): ?>
+    <a href="<?=$v['item_href']?>" class="mobile__link js-link"><?=$v['item_name']?></a>
+    <?php endforeach; ?>
+    <a href="#" class="mobile__link mobile__link_close">Закрыть</a>            
+</div>
+<section class="block-header vh100">
+    <a id="header"></a>
+    <div class="block-header__info">
+        <div class="block-header__name">
+            <?=$this->get('name')?> <span class="block-header__fio"><?=$this->get('fio')?></span>
+        </div>
+        <h1 class="block-header__h1">
+            <?=$this->get('header')?>
+        </h1>
+        <ul class="block-header__stack">
+            <?php foreach($this->get('stack') as $v): ?>
+            <li class="block-header__stack-item"><?=$v?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <a href="#about" class="block-header__more js-link"></a>    
+</section>
+<section class="block-about">
+    <a id="about"></a>
+    <div class="block-about__items container">
+        <?php foreach($this->get('skills') as $v): ?>
+        <div class="block-about__item">
+            <div class="text-center">
+                <h2 class="h1">
+                    <?=$v['name']?>
+                </h2>
+            </div>
+            <div class="block-about__grid">
+                <?php foreach($v['items'] as $v): ?>
+                <div class="block-about__grid-item">
+                    <div class="block-about__grid-icon">
+                        <img src="<?=HOME?>/templates/images/<?=$v['item_icon']?>" alt="" title="" class="block-about__grid-image" />
+                    </div>
+                    <div class="block-about__grid-header"><?=$v['item_name']?></div>
+                    <div class="block-about__gird-text"><?=$v['item_text']?>.</div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>        
+        <?php endforeach; ?>
+    </div>
+</section>
+<section class="block-portfolio">
+    <a id="portfolio"></a>
+    <div class="container">
+        <div class="block-portfolio__header text-center">
+            <h2 class="h1">Примеры работ</h2>
+        </div>
+        <div class="block-portfolio__items">
+            <?php foreach($this->get('portfolio') as $v): ?>
+            <a href="<?=$v['portfolio_href']?>" class="block-portfolio__item" style="background-image: url(/uploads/portfolio/<?=$v['portfolio_image']?>);" target="_blank" rel="nofollow">
+                <div class="block-portfolio__item-info">
+                    <div class="block-portfolio__item-header">
+                        <?=$v['portfolio_name']?>
+                    </div>
+                    <div class="block-portfolio__tags">
+                        <?php foreach($v['portfolio_tags'] as $v): ?>
+                        <div class="block-portfolio__tag"><?=$v?></div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<section class="block-reviews">
+    <a id="reviews"></a>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h1">Отзывы</h2>
+            <div class="block-reviews__h1-sub">
+                Все отзывы являются реальными и взяты с моего профиля на <a href="https://www.weblancer.net/users/iPower/reviews/" target="_blank" rel="nofollow" class="block-reviews__link">Weblancer.net</a>
+            </div>
+        </div>
+        <div class="block-reviews__items">
+            <div class="slider">
+                <div class="block-reivews__wrapper">
+                    <?php foreach($this->get('reviews') as $k=>$v): ?>
+                    <?php if ($k && !($k%2)): ?>
+                </div>
+                <div class="block-reivews__wrapper">
+                    <?php endif; ?>
+                    <div class="block-reviews__item">                        
+                        <div class="block-reviews__item-block block-reviews__item-block_1">
+                            <div class="block-reviews__avatar">
+                                <img src="/uploads/reviews/<?=$v['review_avatar']?>" alt="" title="" class="block-reviews__image" />
+                            </div>
+                        </div>
+                        <div class="block-reviews__item-block block-reviews__item-block_1">
+                            <div class="block-reviews__about">
+                                <div class="block-reviews__name"><?=$v['review_name']?></div>
+                                <div class="block-reviews__login"><?=$v['review_login']?></div>
+                            </div>
+                        </div>
+                        <div class="block-reviews__item-block block-reviews__item-block_2">
+                            <div class="block-reviews__text">
+                                <?=$v['review_text']?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="block-reviews__controls">
+                <a href="#" class="block-reviews__control block-reviews__control-prev"></a>
+                <a href="#" class="block-reviews__control block-reviews__control-next"></a>
+            </div>                
+        </div>
+    </div>
+</section>
+<section class="block-contacts vh100">
+    <a id="contacts"></a>
+    <div class="container">
+        <h2 class="block-contacts__header block-contacts__header_bold"><?=$this->get('contacts_header1')?></h2>
+        <div class="block-contacts__header"><?=$this->get('contacts_header2')?></div>
+        <div class="block-contacts__header-sub">
+            <?=$this->get('contacts_header_sub')?>
+        </div>
+        <a href="" class="block-contacts__btn js-callback">Отправить сообщение</a>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <p class="copyright__block">Copyright &copy; Юрий Кречик («Geguti.ru»). <span class="copyright__new-line"><a href="http://legalacts.ru/kodeks/GK-RF-chast-4/razdel-vii/" target="_blank" rel="nofollow" class="copyright__link">Все авторские права защищены</a>.</span></p>
+            <p class="copyright__block">Копирование любых материалов сайта строго запрещено <span class="copyright__info">ознакомиться с <a href="<?=HOME?>/usloviya-ispolzovaniya-sajta.html" target="_blank" rel="nofollow" class="copyright__link">Условиями использования сайта</a>.</span><p>
+            <p class="copyright__block">
+                <a href="<?=HOME?>/politika-konfidenczialnosti.html" target="_blank" rel="nofollow" class="copyright__link">Обработка персональных данных</a> / 
+                <a href="<?=HOME?>/politika-konfidenczialnosti.html" target="_blank" rel="nofollow" class="copyright__link">Политика конфиденциальности</a>
+            </p>
+        </div>
+    </div>
+</section>
+<?php include_once(ABSPATH.'/templates/home_footer.html'); ?>

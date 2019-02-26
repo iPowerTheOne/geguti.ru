@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /callback.html
+Disallow: /thanks.html
+Disallow: /usloviya-ispolzovaniya-sajta.html
+Disallow: /politika-konfidenczialnosti.html
+
+User-agent: Yandex
+Disallow: /callback.html
+Disallow: /thanks.html
+Disallow: /usloviya-ispolzovaniya-sajta.html
+Disallow: /politika-konfidenczialnosti.html
+
+Sitemap: https://geguti.ru/sitemap.xml
+Host: https://geguti.ru
